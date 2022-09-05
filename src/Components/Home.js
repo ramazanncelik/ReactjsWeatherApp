@@ -21,12 +21,14 @@ function Home() {
                 setLocationName("İstanbul")
                 setLocation(locationName)
                 toast.error('Lütfen Konumu boş bırakmayınız...', {
-                    duration: 1500
+                    duration: 2000,
+                    position:"top-left"
                 });
             } else {
                 setLocation(locationName)
                 toast.success('Konum başarıyla değiştirildi.', {
-                    duration: 1500
+                    duration: 2000,
+                    position:"top-left"
                 });
             }
         }
@@ -39,7 +41,7 @@ function Home() {
                 <label style={{marginRight:5}}>Enter our location:</label>
                 <input
                     value={locationName}
-                    onKeyDown={e => getWeather(e)}
+                    onKeyDown={e => {getWeather(e)}}
                     onChange={(e) => setLocationName(e.target.value)}
                     placeholder='What is your location?' />
             </div>
